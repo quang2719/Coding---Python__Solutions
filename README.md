@@ -16,6 +16,8 @@ Welcome to my repository of LeetCode solutions in Python! This is where I store 
 * 🔝 **[Top Interview Questions](https://leetcode.com/explore/featured/card/top-interview-questions-easy/)** Common interview questions found on LeetCode.
 * 🔁 **[Recursion](https://leetcode.com/explore/learn/card/recursion-i/)** Problems involving recursion.
 * 🐼 **[Introduction to Pandas](https://leetcode.com/studyplan/introduction-to-pandas/)**
+* 🐼 **[Pandas (kaggle kearning)](https://www.kaggle.com/learn/pandas)**
+
 
 ## 🤝 Contributions
 
