@@ -10,9 +10,10 @@ class MyStack:
     def pop(self) -> int:
         val = 0
         while self.q1:
-            val = self.q1.pop()
-            self.q2.insert(0,val)
-        q2.pop()
+            if len(self.q1) ==1:
+                val = self.q1.pop()
+                break
+            self.q2.insert(0,self.q1.pop())
         while self.q2:
             self.q1.insert(0,self.q2.pop())
         return val
@@ -21,8 +22,11 @@ class MyStack:
     def top(self) -> int:
         val = 0
         while self.q1:
-            val = self.q1.pop()
-            self.q2.insert(0,val)
+            if len(self.q1) ==1:
+                val = self.q1.pop()
+                self.q2.insert(0,val)
+                break
+            self.q2.insert(0,self.q1.pop())
         while self.q2:
             self.q1.insert(0,self.q2.pop())
         return val
