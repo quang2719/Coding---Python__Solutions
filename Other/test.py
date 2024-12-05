@@ -1,5 +1,9 @@
-arr = [1,2,3,3,3,2,4]
-l = 2
-for i in range(5,2):
-    print('YES')
-print('NO')
+arr = [1,2,3,4,5]
+l = 0
+while l < len(arr):
+    if arr[l] %2 == 0:
+        arr.insert(l,2)
+        l+=2
+    else: l+=1
+
+print(arr)
