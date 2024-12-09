@@ -1,9 +1,5 @@
-arr = [1,2,3,4,5]
-l = 0
-while l < len(arr):
-    if arr[l] %2 == 0:
-        arr.insert(l,2)
-        l+=2
-    else: l+=1
-
-print(arr)
+for i in range(3):
+    for j in range(10):
+        if j > 5:
+            break
+        print(i,j,sep= " ")
