@@ -1,16 +1,13 @@
-import heapq
 class Solution:
     def findScore(self, nums: List[int]) -> int:
         if len(nums) <=2:
             return min(nums)
-        heap = []
-        res = 0
-        checked = [False] * len(nums)
-        for i,x in enumerate(nums):  
-            heapq.heappush(heap, (x,i))
 
-        while heap:
-            val,id = heapq.heappop(heap)
+        s_num = [(x,i) for i,x in enumerate(nums)]
+        s_num.sort(key = lambda x : x[0])
+        res = 0
+        checked = [False] * len(s_num)
+        for val,id in s_num:  
             if not checked[id]:
                 res += val
                 if id == 0:
