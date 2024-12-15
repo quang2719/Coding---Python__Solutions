@@ -8,17 +8,18 @@ class Solution:
             delta = float(p+1)/float(t+1)-float(p)/float(t)
             heapq.heappush(
                 heap, 
-                (delta,id,p,t)
+                (-delta,id,p,t)
                 )
             id+=1
-        while extraStudents >0:
+        while extraStudents:
             delta,_,p,t = heapq.heappop(heap)
+            #choose p,t
             p+=1
             t+=1
-            delta = float(p+1)/float(t+1)-float(p)/float(t)
+            new_delta = float(p+1)/float(t+1)-float(p)/float(t)
             heapq.heappush(
                 heap, 
-                (delta,id,p,t)
+                (-new_delta,id,p,t)
                 )
             id+=1
             extraStudents -= 1
