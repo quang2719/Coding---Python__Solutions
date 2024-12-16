@@ -9,5 +9,5 @@ class Solution:
             x,i = heapq.heappop(heap)
             x *= multiplier
             nums[i] = x
-            heapq.heappush(i,x)
+            heapq.heappush(heap,(x,i))
         return nums
