@@ -1,13 +1,6 @@
-import heapq
-class Solution:
-    def getFinalState(self, nums: List[int], k: int, multiplier: int) -> List[int]:
-        heap = []
-        count = 0
-        for i,x in enumerate(nums):
-            heapq.heappush(heap,(x,i))
-        for _ in range(k):
-            x,i = heapq.heappop(heap)
-            x *= multiplier
-            nums[i] = x
-            heapq.heappush(i,x)
-        return nums
+def change_num(nums):
+    nums = [x for x in range(5)]
+    return nums
+nums = [1,2,3]
+change_num(nums)
+print(nums)
