@@ -2,23 +2,24 @@ class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
         cur_arr = []
-        self.createArr(cur_arr,target,res,candidates)
+        self.createArr(cur_arr,target,res,candidates,0)
         return res
-    def createArr(self,cur_arr,target,res,candidates):
+    def createArr(self,cur_arr,target,res,candidates,i_candi):
         if target < 0: return
         if target == 0:
-            res.append(cur_arr)
+            res.append(cur_arr.copy())
             return
         
-        for can in candidates:
+        for i in range(i_candi,len(candidates)):
+            can = candidates[i]
             cur_arr.append(can)
             self.createArr(
                 cur_arr,
                 target - can,
                 res,
-                candidates
+                candidates,
+                i
             )
-            cur_arr = cur_arr[::-1]
-
+            cur_arr.pop()
 
         
