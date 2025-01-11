@@ -1,26 +1,23 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        nums.append(100)
-        used = {}
-        for x in nums:
-            used[x] = False
-        res  = []
-        i = 0
-        cur = []
-        self.do(nums,res,i,cur,used)
-        return res
-    def do(self,nums,res,i,cur,used):
-        if i == len(nums):
-            res.append(cur.copy())
-            return
+        res = []
+        cur_state = []
+        used = [False]*len(nums)
         
-        for x in nums:
-            if x != 100:
-                if not used[x]:
-                    used[x] = True
-                    cur.append(x)
-                    self.do(nums,res,i+1,cur,used)
-                    cur.pop()
-                    used[x] = False
-            else:
-                self.do(nums,res,i+1,cur)
+        def backtrack(cur_state,res,nums,used,pre_id):
+            res.append(cur_state.copy())
+            if len(cur_state) == len(nums):
+                return
+
+            for i in range(pre_id+1,len(nums)):
+                x = nums[i]
+                if not used[i]:
+                    used[i] = True
+                    cur_state.append(x)
+                    backtrack(cur_state,res,nums,used,i)
+                    used[i] = False
+                    cur_state.pop()
+        backtrack(cur_state,res,nums,used,-1)
+        return res
+
+
