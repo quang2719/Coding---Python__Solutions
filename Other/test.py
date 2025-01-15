@@ -1,4 +1,2 @@
-from collections import Counter
-s = 'asdfasdfasdfasdf'
-for x,val in Counter(s).items():
-    print(x,val,sep = " ")
+arr = [3,9,20,null,null,15,7]
+print(arr)
