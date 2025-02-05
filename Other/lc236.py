@@ -13,25 +13,23 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
-        def travel(node,statep,stateq,p,q,state,res):
-            if not state or not node:
-                return
-            
-            if node.val == p:
-                statep = True
-            if node.val == q:
-                stateq = True
-            if node.left:
-                travel(node.left,statep,stateq,p,q,state,res)
-            if node.right:
-                travel(node.right,statep,stateq,p,q,state,res)
-
-            # res
-            if stateq and statep:
-                state = False
-                res = node.val
-                return
-        res = 0
-        travel(root,False,False,p,q,True,res)
-        return res
-            
+        parent = {}
+        def travel(parent,root):
+            if not root: return
+            if root.left:
+                parent[root.left] = root
+                travel(parent,root.left)
+            if root.right:
+                parent[root.right] = root
+                travel(parent,root.right)
+        travel(parent,root)
+        candidate = []
+        while p != root:
+            candidate.append(p)
+            p = parent[p]
+        candidate.append(p)
+        while q != root:
+            if q in candidate:
+                return q
+            q = parent[q]
+        return root
