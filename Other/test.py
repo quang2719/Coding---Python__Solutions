@@ -1,2 +1,3 @@
-arr = [3,9,20,null,null,15,7]
-print(arr)
+grid = [[1,2],[1,2],[1,2]]
+v = [[True]*len(grid[0]) for _ in grid]
+print(v)

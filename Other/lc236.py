@@ -23,11 +23,13 @@ class Solution(object):
                 parent[root.right] = root
                 travel(parent,root.right)
         travel(parent,root)
+
         candidate = []
         while p != root:
             candidate.append(p)
             p = parent[p]
         candidate.append(p)
+        
         while q != root:
             if q in candidate:
                 return q
