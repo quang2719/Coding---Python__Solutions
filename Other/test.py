@@ -1,4 +1,14 @@
-from queue import PriorityQueue
-arr = [3,2,1,5,6,2,1,2,3]
-for i in range(len(arr)-1,-1,-1):
-    print(arr[i])
+s = "asakjhdfkas"
+
+arr = [{}]
+for i in range(len(s)):
+    cur_dic = arr[i].copy()
+    cur_x = s[i]
+    cur_dic[cur_x] = cur_dic.get(cur_x,0) + 1
+    arr.append(cur_dic)
+print(arr)
+print(len(arr))
+def do():
+    return ""
+print(do)
+    
