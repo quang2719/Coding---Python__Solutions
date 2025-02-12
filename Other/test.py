@@ -10,5 +10,5 @@ print(arr)
 print(len(arr))
 def do():
     return ""
-print(do)
+print(re)
     
