@@ -23,5 +23,5 @@ solul = Solution()
 nums = [2,11,10,1,3]
 k = 10
 print(solul.minOperations(nums,k))
-        
+
             

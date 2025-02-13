@@ -20,3 +20,5 @@ class Solution(object):
         for i in range(len(height)):
             res += max(0, min(max_left_col[i],max_right_col[i]) - height[i])
         return res
+    
+    
