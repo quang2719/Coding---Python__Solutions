@@ -1,5 +1,4 @@
-a =[[0, 1, 2, 3], [1, 1, 2, 3], [2, 2, 2, 3], [3, 3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5]]
-for x in a:
-    for y in x:
-        print(y,end = " ")
-    print()
+import os
+
+name = os.getenv("name", "World")
+print(f"Hello {name} from Python")
